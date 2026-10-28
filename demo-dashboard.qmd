@@ -46,7 +46,7 @@ now_nz <- now(tzone = "Pacific/Auckland")
 last_24 <- recent_quakes |> 
     filter(time > (now_nz - hours(24)))
 n_24 <- nrow(last_24)
-hours_last <- round(difftime(now_nz, recent_quakes$time[1], units = "hours"))
+hours_last <- as.numeric(round(difftime(now_nz, recent_quakes$time[1], units = "hours")))
 ```
 
 ```{r}
